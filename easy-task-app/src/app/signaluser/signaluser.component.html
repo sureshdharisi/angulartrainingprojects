@@ -1,0 +1,16 @@
+<div>
+    <!-- adding listenres in angula using paranthesis ()-->
+  <button (click)="onSelectUser()">
+    <!-- [src] is attribute binding, here we don't need to use double curly braces {{}}-->
+    <!--<img [src]="'users/'+selectedUser?.avatar" alt="{{selectedUser?.name}}"/>-->
+    <!-- binding data using getter method from the components-->
+    <!--<img [src]="imagePath" alt="{{selectedUser()?.name}}"/>-->
+
+    <!--Below is the reference to extract data from computed object-->
+    <!--<img [src]="imagePath()" alt="{{selectedUser()?.name}}"/>
+    <span>{{selectedUser()?.name}}</span>-->
+
+    <img [src]="imagePath()" alt="{{name()}}"/>
+    <span>{{name()}}</span>
+  </button>
+</div>

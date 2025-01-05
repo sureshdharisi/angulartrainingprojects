@@ -1,0 +1,37 @@
+<app-header></app-header>
+
+<main>
+  <ul id="users">
+    <!--<app-user [id]="users[0].id" [avatar]="users[0].avatar" [name]="users[0].name" 
+    [user]="users[0]"
+    (select)="onSelectUser($event)"/>
+    <app-user [id]="users[1].id" [avatar]="users[1].avatar" [name]="users[1].name"
+    [user]="users[1]"
+    (select)="onSelectUser($event)"/>
+    <app-user [id]="users[2].id" [avatar]="users[2].avatar" [name]="users[2].name" 
+    [user]="users[2]" (select)="onSelectUser($event)"/>
+    <app-user [id]="users[3].id" [avatar]="users[3].avatar" [name]="users[3].name" 
+    [user]="users[3]" (select)="onSelectUser($event)"/>-->
+
+    @for (user of users; track $index) {
+    <li>
+      <app-user [user]="user" (select)="onSelectUser($event)" [selected]="user.id === userid" />
+    </li>
+    }
+
+    <!-- Passing inputs using signals-->
+    <!--<app-signaluser [avatar]="users[0].avatar" [name]="users[0].name"/>
+    <app-signaluser [avatar]="users[1].avatar" [name]="users[1].name"/>
+    <app-signaluser [avatar]="users[2].avatar" [name]="users[2].name"/>
+    <app-signaluser [avatar]="users[3].avatar" [name]="users[3].name"/>-->
+  </ul>
+
+  @if (userid) {
+    <div>
+      <app-tasks [taskuserid]="userid" />
+    </div>
+  } @else {
+    <p>Select user to see tasks</p>
+  }
+
+</main>
