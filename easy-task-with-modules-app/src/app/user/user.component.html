@@ -1,0 +1,17 @@
+<app-card>
+  <!-- adding listenres in angula using paranthesis ()-->
+  <!-- Adding conditional logic to set button is active or not-->
+  <button (click)="onSelectUser()" [class.active]="selected">
+    <!-- [src] is attribute binding, here we don't need to use double curly braces {{}}-->
+    <!--<img [src]="'users/'+selectedUser?.avatar" alt="{{selectedUser?.name}}"/>-->
+    <!-- binding data using getter method from the components-->
+    <!--<img [src]="imagePath" alt="{{selectedUser()?.name}}"/>-->
+
+    <!--Below is the reference to extract data from computed object-->
+    <!--<img [src]="imagePath()" alt="{{selectedUser()?.name}}"/>
+    <span>{{selectedUser()?.name}}</span>-->
+
+    <img [src]="imagePath" alt="{{ user?.name }}" />
+    <span>{{ user?.name }}</span>
+  </button>
+</app-card>
