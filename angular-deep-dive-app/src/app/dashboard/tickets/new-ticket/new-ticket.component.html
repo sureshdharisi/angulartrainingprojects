@@ -1,0 +1,27 @@
+<!-- <form (ngSubmit)="onSubmit(titleInput,requestData)"> -->
+<!-- <form (ngSubmit)="onInputSubmit(titleInput.value,requestData.value,form)" #form> <!--Getting access to template elements via  -->
+<!--view child in the component class-->
+<form
+  (ngSubmit)="
+    onInputSubmitWithoutTemplateDeclare(titleInput.value, requestData.value)
+  "
+  #form
+>
+  <app-control label="Title">
+    <input name="title" id="title" #titleInput #input />
+    <!--Template variables example-->
+  </app-control>
+
+  <app-control label="Request">
+    <textarea
+      name="request"
+      id="request"
+      rows="3"
+      #requestData
+      #input
+    ></textarea>
+  </app-control>
+  <p>
+    <button appButton>Submit <span ngProjectAs="icon"> 🚩 </span></button>
+  </p>
+</form>
